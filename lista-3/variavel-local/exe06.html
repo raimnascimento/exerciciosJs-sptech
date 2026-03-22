@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    <h2>Nota da Atividade Avaliativa</h2>
+    Nome do aluno: <input type="text" id="ipt_nome">
+    <br><br>
+    Valor da Atividade Avaliativa 1: <input type="number" id="atv1">
+    <br>
+    Valor da Atividade Avaliativa 2: <input type="number" id="atv2">
+    <br>
+    Valor da Atividade Avaliativa 3: <input type="number" id="atv3">
+    <br>
+    <button onclick="mostrarMedia()">Mostrar Nota</button>
+    <br><br>
+    <div id="msg_soma"></div>
+    <br>
+    <div id="msg_notaFinal"></div>
+    
+</body>
+</html>
+<script>
+    function mostrarMedia() {
+        let nomeAluno = ipt_nome.value;
+        let n1 = Number(atv1.value);
+        let n2 = Number(atv2.value);
+        let n3 = Number(atv3.value);
+        somaNotas = n1 + n2 + n3;
+        mediaNotas = (somaNotas / 3).toFixed(0);
+
+        msg_soma.innerHTML = 'A soma das suas três atividades é: ' + somaNotas;
+        msg_notaFinal.innerHTML = nomeAluno + ', a média das suas atividades é: ' + mediaNotas;
+
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h2>Controle de notas</h2>
+
+    Informe a primeira nota: <input type="text" id="ipt_nota1">
+    <br><br>
+    Informe a segunda nota: <input type="text" id="ipt_nota2">
+    <br><br>
+    Informe a terceira nota: <input type="text" id="ipt_nota3">
+    <br><br>
+    <button onclick="mostrarNota()">Analisar desempenho</button>
+    <br><br>
+    <div id="resultado"></div>
+    
+</body>
+</html>
+<script>
+    function mostrarNota() {
+        let soma = Number(ipt_nota1.value) + Number(ipt_nota2.value) + Number(ipt_nota3.value);
+        let media = soma / 3;
+
+        if (media < 9.4) {
+            resultado.innerHTML = `Sua média foi de ${media.toFixed(1)}.`;
+        } else {
+            resultado.innerHTML = `Sua média foi de ${media.toFixed(1)}.<br> Parabéns, você é fora de série!`;
+        }
+
+    }
+</script>

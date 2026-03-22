@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+<body>
+    <h2>Cálculo do Vale Transporte</h2>
+
+    Informe o valor da passagem de ônibus: <input type="text" id="ipt_passagem">
+    <br><br>
+    Informe a quantidade viagens que você faz por mês: <input type="text" id="ipt_qtdViagens">
+    <br><br>
+    Informe a distância do trabalho até a sua casa em KM: <input type="text" id="ipt_distancia">
+    <br><br>
+    <button onclick="calcularVT()">Calcular VT</button>
+    <br><br>
+    <div id="mensagemVale"></div>
+
+</body>
+</html>
+
+<script>
+    function calcularVT() {
+        let valorPassagem = Number(ipt_passagem.value);
+        let qtdViagens = Number(ipt_qtdViagens.value);
+        let distancia = Number(ipt_distancia.value);
+        let km = 0.75;
+
+        let onibus = valorPassagem * (0.90 * qtdViagens.toFixed(0));
+        let uber = km * distancia * (0.10 * qtdViagens);
+
+        let gastos = Number(onibus + uber);        
+
+        mensagemVale.innerHTML = `Você vai gastar R$${gastos.toFixed(2)} por mês com transporte.`;
+    }
+</script>

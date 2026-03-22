@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h2>Controle Financeiro Mensal de uma empresa</h2>
+
+    Informe o valor recebido com a venda das peças: <input type="text" id="ipt_valorVenda">
+    <br><br>
+    Informe o valor recebido com a venda das servicos: <input type="text" id="ipt_valorServicos">
+    <br><br>
+    Informe o percentual de imposto sobre os valores recebidos: <input type="text" id="ipt_percentual">
+    <br><br>
+    Informe os gastos realizados no mês: <input type="text" id="ipt_despesas">
+    <br><br>
+    <button onclick="mostrarControle()">Acumular</button>
+    <br><br>
+    <div id="msgControleFinanceiro"></div>
+    
+</body> 
+</html>
+<script>
+    let mes = 0;
+    let acumulado = 0;
+
+    function mostrarControle() {
+        mes = mes + 1;
+        let vendas = Number(ipt_valorVenda.value);
+        let servicos = Number(ipt_valorServicos.value);
+        let totalRecebidos = vendas + servicos;
+        let percentualImposto = Number(ipt_percentual.value) / 100;
+        let valorImposto = totalRecebidos * percentualImposto;
+        let despesas = Number(ipt_despesas.value);
+        let saldoFinal = (totalRecebidos - valorImposto) - despesas;
+        acumulado = acumulado + saldoFinal;
+
+        msgControleFinanceiro.innerHTML += `Resumo do mês ${mes}, Total recebido = R$${totalRecebidos.toFixed(2)} – Valor do Imposto = R$${valorImposto.toFixed(2)} – Saldo Final de R$${saldoFinal.toFixed(2)} – Acumulado até o Momento = R$${acumulado.toFixed(2)}.<br>`;
+    }
+</script>

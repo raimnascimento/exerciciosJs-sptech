@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h2>Processo Seletivo Mentes Brilhantes</h2>
+
+    Informe sua nota do ENEM: <input type="text" id="ipt_notaEnem">
+    <br><br>
+    Informe a nota do vestibular (interno): <input type="text" id="ipt_notaVestibular">
+    <br><br>
+    <button onclick="processoSeletivo()">Avaliação</button>
+    
+</body>
+</html>
+<script>
+    function processoSeletivo() {
+        let notaEnem = Number(ipt_notaEnem.value);
+        let notaVestibular = Number(ipt_notaVestibular.value);
+
+        if (notaEnem > 799 || notaVestibular >= 700) {
+            alert('Parabéns! Aprovado');
+        } else {
+            alert('Tente semestre que vem!');
+        }
+    }
+</script>

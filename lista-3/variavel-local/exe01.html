@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicío 1</title>
+</head>
+<body>
+    <h2>Calculadora Básica</h2>
+    Insira um número: <input type="number" id="ipt_n1">
+    <br><br>
+    Insira outro número: <input type="number" id="ipt_n2">
+    <br><br>
+
+    <button onclick="fazerMultiplicacao()">Fazer multiplicação</button>
+    <br><br>
+    <button onclick="fazerDivisao()">Fazer divisão</button>
+    <br><br>
+    <button onclick="fazerSoma()">Fazer soma</button>
+    <br><br>
+    <button onclick="fazerSubtracao()">Fazer subtração</button>
+    <br><br>
+    <div id="resultado_calculo"></div>
+    
+</body>
+</html>
+<script>
+    function fazerMultiplicacao() {
+        let n1 = ipt_n1.value;
+        let n2 = ipt_n2.value;
+        let resultado = n1 * n2
+
+        resultado_calculo.innerHTML = 'O produto entre ' + n1 + ' por ' + n2 + ' é: ' + resultado.toFixed(2);
+    }
+
+    function fazerDivisao() {
+        let n1 = ipt_n1.value;
+        let n2 = ipt_n2.value;
+        let resultado = n1 / n2
+
+        resultado_calculo.innerHTML = 'A razão entre ' + n1 + ' por ' + n2 + ' é: ' + resultado.toFixed(2);
+    }
+
+    function fazerSoma() {
+        let n1 = Number(ipt_n1.value);
+        let n2 = Number(ipt_n2.value);
+        let resultado = n1 + n2
+
+        resultado_calculo.innerHTML = 'A soma entre ' + n1 + ' e ' + n2 + ' é: ' + resultado.toFixed(2);
+    }
+
+    function fazerSubtracao() {
+        let n1 = Number(ipt_n1.value);
+        let n2 = Number(ipt_n2.value);
+        let resultado = n1 - n2
+
+        resultado_calculo.innerHTML = 'A diferença entre ' + n1 + ' por ' + n2 + ' é: ' + resultado.toFixed(2);
+    }
+</script>

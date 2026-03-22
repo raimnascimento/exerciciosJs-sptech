@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    <h2>Contador de Passos</h2>
+
+    Insira a distância percorrida em KM: <input type="number" id="ipt_km">
+    <br><br>
+    Insira o tempo gasto em minutos: <input type="number" id="ipt_minutos">
+    <br><br>
+    <button onclick="mostrarTreino()">Finalizar treino</button>
+    
+</body>
+</html>
+<script>
+    function mostrarTreino() {
+        let distanciaKm = ipt_km.value;
+        let minutos = ipt_minutos.value;
+
+        alert('Você percorreu ' + distanciaKm + 'km hoje!');
+        alert('O seu tempo total de exercício foi de ' + minutos + ' minutos.');
+    }
+</script>

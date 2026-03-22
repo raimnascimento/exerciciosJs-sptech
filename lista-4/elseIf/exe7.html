@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <h2>Consumo de Calorias: Sua Dieta Está Saudável?</h2>
+
+    Quantos pães franceses você consome por dia? <input type="text" id="ipt_qtdPaes">
+    <br><br>
+    Quantos pacotes de bolacha recheada você consome por dia? <input type="text" id="ipt_qtdBolacha">
+    <br><br>
+    Quantos copos de achocolatado você toma por dia? <input type="text" id="ipt_achocolatado">
+    <br><br>
+    <button onclick="calculoCalorias()">Verificar Calorias</button>
+    <br><br>
+    <div id="msgNutricionista"></div>
+    
+</body>
+</html>
+<script>
+    function calculoCalorias() {
+        let paes = Number(ipt_qtdPaes.value);
+        let bolachas = Number(ipt_qtdBolacha.value);
+        let achocolatados = Number(ipt_achocolatado.value);
+        let caloriaTotal = (paes * 50) + (bolachas * 80) + (achocolatados * 70);
+
+        if (caloriaTotal < 200) {
+            msgNutricionista.innerHTML = `Calorias ingeridas: ${caloriaTotal}.<br> Parabéns, vai ficar em forma!`;
+        } else if (caloriaTotal >= 200 && caloriaTotal < 401) {
+            msgNutricionista.innerHTML = `Calorias ingeridas: ${caloriaTotal}.<br> Cuidado, vai ficar menos saudável!`;
+        } else {
+            msgNutricionista.innerHTML = `Calorias ingeridas: ${caloriaTotal}.<br> Alerta critíco de saúde!!!`;
+        }
+    }
+</script>

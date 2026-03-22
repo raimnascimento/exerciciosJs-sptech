@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <h2>Sistema de Login: Autentique-se para Acessar!</h2>
+
+    Informe o login: <input type="text" id="ipt_login">
+    <br><br>
+    Informe a senha: <input type="password" id="ipt_senha">
+    <br><br>
+    <button onclick="acesso()">Entrar</button>
+    
+</body>
+</html>
+<script>
+    function acesso() {
+        let login = ipt_login.value;
+        let senha = ipt_senha.value;
+
+        if (login == 'SPTech' && senha == 'digital') {
+            alert('Usuário autenticado com sucesso');
+        } else {
+            alert('Falha na autenticação!');
+        }
+    }
+</script>

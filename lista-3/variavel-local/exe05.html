@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+</head>
+<body>
+
+    <h2>Economia com o Bilhete Único</h2>
+    Qual é o valor da passagem atualmente? <input type="number" id="ipt_passagem">
+    <br><br>
+    Quantas viagens você faz por mês? <input type="number" id="ipt_qtd_viagens">
+    <br><br>
+    <button onclick="mostrarEconomia()">Ver economia</button>
+    <br><br>
+    <div id="div_valorEconomizado"></div>
+    
+</body>
+</html>
+<script>
+    function mostrarEconomia() {
+        let valorPassagem = Number(ipt_passagem.value);
+        let qtdViagens = Number(ipt_qtd_viagens.value);
+        let valorTotalPassagem = valorPassagem * qtdViagens;
+        let valorEconomizando = valorTotalPassagem / 2;
+
+        div_valorEconomizado.innerHTML = 'Você economizará R$' + valorEconomizando.toFixed(2) + ' por mês';
+    }
+</script>

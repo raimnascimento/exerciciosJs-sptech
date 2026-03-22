@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <h2>Critérios de Preferência de Augusto Bivio</h2>
+
+    Empresa: <input type="text" id="ipt_empresa">
+    <br><br>
+    Valor da bolsa estágio: <input type="text" id="ipt_bolsa">
+    <br><br>
+    VR: <input type="text" id="ipt_vr">
+    <br><br>
+    Tempo de deslocamento até a SP Tech: <input type="text" id="ipt_deslocamento">
+    <br><br>
+    <button onclick="estagioAluno()">É preferida?</button>
+    <br><br>
+    <div id="criteriosEstagio"></div>
+    
+</body>
+</html>
+<script>
+    function estagioAluno() {
+        let empresa = ipt_empresa.value;
+        let bolsaEstagio = Number(ipt_bolsa.value);
+        let valeRefeicao = Number(ipt_vr.value);
+        let deslocamento = Number(ipt_deslocamento.value);
+
+        if (bolsaEstagio > 1799 || valeRefeicao > 19 || deslocamento <= 30) {
+            criteriosEstagio.innerHTML = `A empresa ${empresa} é uma de suas preferências`;
+        } else {
+            criteriosEstagio.innerHTML = `A empresa ${empresa} está fora da sua lista`;
+        }
+    }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    <h2>Depósito e Retirada de dinheiro</h2>
+
+    Olá, usuário.
+    <br>
+    Informe o valor a ser depositado/retirado da sua conta: <input type="text" id="ipt_valor">
+    <br><br>
+    <button onclick="depositarDinheiro()">Depositar</button>
+    <br><br>
+    <button onclick="retirarDinheiro()">Retirar</button>
+    <br><br>
+    <div id="mensagemUsuario"></div>
+    
+</body>
+</html>
+<script>
+    saldoAtual = 0;
+    valorDeposito = 0;
+
+    function depositarDinheiro() {
+        valorDeposito = Number(ipt_valor.value);
+        saldoAtual = Number(saldoAtual + valorDeposito);
+
+        mensagemUsuario.innerHTML += `Depósito de R$${valorDeposito.toFixed(2)} efetuado! Saldo atual: R$${saldoAtual.toFixed(2)}.<br>`;
+    }
+
+    function retirarDinheiro() {
+        valorRetirada = Number(ipt_valor.value);
+        saldoAtual = Number(saldoAtual - valorRetirada);
+
+        mensagemUsuario.innerHTML += `Retirada de R$${valorRetirada.toFixed(2)} efetuada! Saldo atual: R$${saldoAtual.toFixed(2)}.<br>`;
+
+    }
+</script>

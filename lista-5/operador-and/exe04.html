@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h2>Melhor Horário para Assistir Netflix: Evite Travamentos!</h2>
+
+    Informe a hora do dia em que você costuma acessar a Netflix: <input type="text" id="ipt_horaDoDia">
+    <br><br>
+    <button onclick="desempenhoNetflix()">Ver recomendação</button>
+    <br><br>
+    <div id="msgNetlix"></div>
+    
+</body>
+</html>
+<script>
+    function desempenhoNetflix() {
+        let hora = Number(ipt_horaDoDia.value);
+
+        if (hora >= 19 && hora <= 21) {
+            msgNetlix.innerHTML = `Não é recomendável que você assista sua série favorita no horário ${hora}:00!`;
+        } else {
+            msgNetlix.innerHTML = `O horário ${hora}:00 é adequado para assistir sua série favorita!`;
+        }
+    }
+</script>

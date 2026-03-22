@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <h2>Índice de Massa Corporal (IMC)</h2>
+
+    Informe o seu peso: <input type="text" id="ipt_peso">
+    <br><br>
+    Informe a sua altura: <input type="text" id="ipt_altura">
+    <br><br>
+    <button onclick="resultadoIMC()">Calcular IMC</button>
+    <br><br>
+    <div id="msgSituacaoIMC"></div>
+
+</body>
+</html>
+<script>
+    function resultadoIMC() {
+        let peso = Number(ipt_peso.value);
+        let altura = Number(ipt_altura.value);
+        let calculoIMC = peso / (altura * altura);
+
+        if (calculoIMC < 18.5) {
+            msgSituacaoIMC.innerHTML = `IMC: ${calculoIMC.toFixed(1)} - Abaixo do peso.`;
+        } else if (calculoIMC >= 18.5 && calculoIMC < 25) {
+            msgSituacaoIMC.innerHTML = `IMC: ${calculoIMC.toFixed(1)} - Peso normal.`;
+        } else if (calculoIMC >= 25 && calculoIMC < 30) {
+                msgSituacaoIMC.innerHTML = `IMC: ${calculoIMC.toFixed(1)} - Acima do peso.`;
+            } else {
+            msgSituacaoIMC.innerHTML = `IMC: ${calculoIMC.toFixed(1)} - Cuidado, risco de obesidade.`;
+            }
+    }
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <h2>Eleição</h2>
+
+    Informe a quantidade de votos do Candidato A: <input type="text" id="ipt_candidatoA">
+    <br><br>
+    Informe a quantidade de votos do Candidato B: <input type="text" id="ipt_candidatoB">
+    <br><br>
+    Informe a quantidade de votos brancos: <input type="text" id="ipt_votosBrancos">
+    <br><br>
+    Informe a quantidade de votos nulos: <input type="text" id="ipt_votosNulo">
+    <br><br>
+    <button onclick="eleicao()">Resultado da Eleição</button>
+    <br><br>
+    <div id="total"></div>
+    <br><br>
+    <div id="candidatoA"></div>
+    <br><br>
+    <div id="candidatoB"></div>
+    <br><br>
+    <div id="invalidos"></div>
+
+</body>
+</html>
+
+<script>
+    function eleicao() {
+        let qtdVotosCandidatoA = Number(ipt_candidatoA.value);
+        let qtdVotosCandidatoB = Number(ipt_candidatoB.value);
+        let votosEmBranco = Number(ipt_votosBrancos.value);
+        let votosNulos = Number(ipt_votosNulo.value);
+        let votosInvalidos = votosEmBranco + votosNulos;
+        let totalVotos = qtdVotosCandidatoA + qtdVotosCandidatoB + votosEmBranco + votosNulos;
+        let porcentCandidatoA = (qtdVotosCandidatoA / totalVotos) * 100;
+        let porcentCandidatoB = (qtdVotosCandidatoB / totalVotos) * 100;
+        let porcentInvalidos = (votosInvalidos / totalVotos) * 100;
+
+        total.innerHTML = `Total de votos: ${totalVotos}`;
+        candidatoA.innerHTML = `Candidato A: ${porcentCandidatoA.toFixed(2)}% (${qtdVotosCandidatoA} votos)`;
+        candidatoB.innerHTML = `Candidato A: ${porcentCandidatoB.toFixed(2)}% (${qtdVotosCandidatoB} votos)`;
+        invalidos.innerHTML = `Inválidos: ${porcentInvalidos.toFixed(2)}% (${votosInvalidos} votos)`;
+
+    }
+</script>

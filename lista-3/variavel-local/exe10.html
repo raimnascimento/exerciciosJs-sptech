@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    <h2>Dividindo a pizza e a caixinha do entregador</h2>
+
+    Qual o sabor da pizza? <input type="text" id="ipt_sabor">
+    <br><br>
+    Qual é o valor da pizza? <input type="text" id="ipt_valor">
+    <br><br>
+    Quantos amigos irão comer? <input type="text" id="ipt_amigos">
+    <br><br>
+    <button onclick="mostrarValor()">Ver valor por amigo</button>
+    <br><br>
+    <div id="msgFinal"></div>
+    
+</body>
+</html>
+<script>
+    function mostrarValor() {
+        let saborPizza = ipt_sabor.value;
+        let valorPizza = Number(ipt_valor.value) + (Number(ipt_valor.value) * 0.10);
+        let qtdAmigos = Number(ipt_amigos.value);
+        let valorAPagar = valorPizza / qtdAmigos;
+
+        msgFinal.innerHTML = `Cada amigo vai colaborar com R$${valorAPagar.toFixed(2)} para a pizza de ${saborPizza}.`;
+    }
+</script>

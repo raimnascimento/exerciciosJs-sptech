@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    <h2>Cálculo do IMC</h2>
+
+    Informe seu peso: <input type="text" id="ipt_peso">
+    <br><br>
+    Informe sua altura: <input type="text" id="ipt_altura">
+    <br><br>
+    <button onclick="calcImc()">Calcular IMC</button>
+    <br><br>
+    <div id="exibirIMC"></div>
+    <br>
+    <div id="msgTabelaIMC"></div>
+
+</body>
+</html>
+<script>
+    function calcImc() {
+        let peso = Number(ipt_peso.value);
+        let altura = Number(ipt_altura.value);
+        let calculoImc = peso / (altura * altura);
+
+        exibirIMC.innerHTML = `O seu IMC é ${calculoImc.toFixed(2)}.`;
+
+        /*
+        if(calculoImc < 18.49) {
+            msgTabelaIMC.innerHTML = `E você está com baixo peso!`;
+        } else if (calculoImc < 25) {
+            msgTabelaIMC.innerHTML = `E você está com o peso adequado!`;
+        } else if (calculoImc < 30) {
+            msgTabelaIMC.innerHTML = `E você está com sobrepeso!`;
+        } else {
+            msgTabelaIMC.innerHTML = `E você está com obesidade!`;
+        }
+        */
+    }
+</script>

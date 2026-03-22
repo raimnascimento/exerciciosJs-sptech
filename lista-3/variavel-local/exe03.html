@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+
+    <h2>Fazendo divisão</h2>
+    Receba um número: <input type="text" id="ipt_n1">
+    <br><br>
+    Receba outro número: <input type="text" id="ipt_n2">
+    <br><br>
+    <button onclick="mostrarQuociente()">Quociente</button>
+    <br>
+    <div id="div_quociente"></div>
+    <br><br>
+    <button onclick="mostrarResto()">Resto da divisão</button>
+    <br>
+    <div id="div_resto"></div>
+    <br><br>
+    <button onclick="mostrarCompleto()">Completo</button>
+    <br>
+    <div id="div_completo"></div>
+    <br><br>
+    
+</body>
+</html>
+<script>
+    function mostrarQuociente() {
+        let n1 = Number(ipt_n1.value);
+        let n2 = Number(ipt_n2.value);
+        resultado = n1 / n2;
+
+        div_quociente.innerHTML = 'A divisão de ' + n1 + ' por ' + n2 + ' é: ' + parseInt(resultado.toFixed(2));
+    }
+
+    function mostrarResto() {
+        let n1 = Number(ipt_n1.value);
+        let n2 = Number(ipt_n2.value);
+        resultado = n1 % n2;
+
+        div_resto.innerHTML = 'O resto da divisão de ' + n1 + ' por ' + n2 + ' é: ' + resultado.toFixed(2);
+    }
+
+    function mostrarCompleto() {
+        let n1 = Number(ipt_n1.value);
+        let n2 = Number(ipt_n2.value);
+        resultado = n1 / n2;
+        restoDiv = n1 % n2;
+
+        div_completo.innerHTML = 'A divisão de ' + n1 + ' por ' + n2 + ' é: ' + parseInt(resultado.toFixed(2)) + ' e o resto dessa divisão é: ' + restoDiv.toFixed(2);
+    }
+</script>

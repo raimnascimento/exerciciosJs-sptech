@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+<body>
+    <h2>Recomendação de Clima</h2>
+
+    Insira a temperatura atual em graus: <input type="number" id="ipt_temp">
+    <br><br>
+    Insira a condição do tempo: <input type="text" id="ipt_clima">
+    <br><br>
+    <button onclick="mostrarTemperatura()">Ver dica</button>
+    
+</body>
+</html>
+<script>
+    function mostrarTemperatura() {
+        let temperatura = ipt_temp.value;
+        let clima = ipt_clima.value;
+
+        alert('Está fazendo ' + temperatura + 'º graus e o dia está ' + clima);
+    }
+</script>

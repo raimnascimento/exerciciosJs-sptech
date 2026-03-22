@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+    <h2>Futebol</h2>
+    Qual é o seu time? <input type="text" id="ipt_fut">
+    <br><br>
+    Quantos títulos seu time possui? <input type="number" id="ipt_titulo">
+    <br><br>
+    <button onclick="timeFut()">Amo meu time!</button>
+    
+</body>
+</html>
+<script>
+    function timeFut() {
+        alert('O time ' + ipt_fut.value + ' tem ' + ipt_titulo.value + ' títulos.')
+    }
+</script>

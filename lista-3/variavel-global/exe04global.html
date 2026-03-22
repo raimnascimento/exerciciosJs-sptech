@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h2>Controle de TVM de caldeira de geração energia elétrica</h2>
+
+    Informe a quantidade de dias de operação: <input type="text" id="ipt_diasOperacao">
+    <button onclick="processarDias()">Processar dias</button>
+    <br><br>
+    <button onclick="pararOperacao()">Stop Operação</button>
+    <button onclick="reiniciarOperacao()">Reiniciar Processo</button>
+    <br><br>
+    <div id="div_reiniciar"></div>
+    <div id="div_parar"></div>
+    <div id="msgAtualizadaTVM"></div>
+
+    
+</body>
+</html>
+<script>
+    let diasOperacao = 0;
+    let tvm = 1000;
+
+    function processarDias() {
+        diasOperacao = Number(ipt_diasOperacao.value);
+        let tvmAnterior = tvm;
+        tvm = tvm - (24 * diasOperacao);
+
+        msgAtualizadaTVM.innerHTML += `O TVM anterior era de ${tvmAnterior} horas, após ${diasOperacao} dias de operação o TVM passou para ${tvm} horas. <br>`;
+    }
+
+    function pararOperacao() {
+        let tvmAnterior = tvm;
+        tvm = tvm - 100;
+        
+        div_parar.innerHTML += `O TVM anterior era de ${tvmAnterior} horas, após o Stop de operação o TVM passou para ${tvm} horas.<br>`;
+    }
+
+    function reiniciarOperacao() {
+        let tvmAnterior = tvm;
+
+        msgAtualizadaTVM.innerHTML = ``;
+        div_parar.innerHTML = ``;
+        div_reiniciar.innerHTML += `Ainda existia ${tvmAnterior} horas, com o reinicio do processo o TVM passou para 1000 horas.<br>`;
+    }
+</script>

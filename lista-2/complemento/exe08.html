@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+<body>
+    <h2>Sistema de Cinema</h2>
+    Insira o nome do filme: <input type="text" id="ipt_filme">
+    <br><br>
+    Insira a hora da sessão: <input type="time" id="ipt_hora">
+    <br><br>
+    <button onclick="mostrarIngresso()">Confirmar ingresso</button>
+    
+</body>
+</html>
+<script>
+    function mostrarIngresso() {
+        let nomeFilme = ipt_filme.value;
+        let horaFilme = ipt_hora.value;
+
+        alert('Ingresso confirmado para o filme ' + nomeFilme + ' no horário ' + horaFilme);
+    }
+</script>

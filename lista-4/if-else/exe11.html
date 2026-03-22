@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    <h2>Análise da família</h2>
+
+    Informe a quantidade de filhos que você tem: <input type="text" id="ipt_filhos">
+    <br><br>
+    <button onclick="analiseFamiliar()">Analisar família</button>
+    <br><br>
+    <div id="msgSobreFamilia"></div>
+    
+</body>
+</html>
+<script>
+    function analiseFamiliar() {
+        let qtdFilhos = Number(ipt_filhos.value);
+
+        if (qtdFilhos >= 1) {
+            msgSobreFamilia.innerHTML = `Não tem TV.<br>`;
+
+            if (qtdFilhos > 1) {
+                msgSobreFamilia.innerHTML += `Não tem internet.<br>`;
+
+                if (qtdFilhos > 2) {
+                    msgSobreFamilia.innerHTML += `Não tem video game.<br>`;
+
+                    if (qtdFilhos > 3) {
+                        msgSobreFamilia.innerHTML += `Não tem Netflix.<br>`;
+                    }
+                }
+            }
+        }
+    }
+</script>

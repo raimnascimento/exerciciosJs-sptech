@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h2>Onde eu moro</h2>
+    Insira o seu endereço: <input type="text" id="ipt_endereco">
+    <br><br>
+    Insira o número da sua casa: <input type="text" id="ipt_num">
+    <br><br>
+    <button onclick="mostEndereco()">Onde eu moro</button>
+    
+</body>
+</html>
+<script>
+    function mostEndereco() {
+        alert('Seu logradouro é ' + ipt_endereco.value);
+        alert('O número do seu logradouro é ' + ipt_num.value);
+    }
+</script>

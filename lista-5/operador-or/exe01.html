@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <h2>Juliane Joada e Suas Frutas Preferidas</h2>
+
+    Qual fruta chegou na mesa? <input type="text" id="ipt_fruta">
+    <br><br>
+    <button onclick="frutaJuliane()">Vai comer?</button>
+    
+</body>
+</html>
+<script>
+    function frutaJuliane() {
+        let fruta = ipt_fruta.value;
+
+        if (fruta == 'uva' || fruta == 'abacaxi') {
+            alert(`Sim, vai comer ${fruta}`)
+        } else {
+            alert(`A fruta ${fruta} ela não come`);
+        }
+    }
+</script>

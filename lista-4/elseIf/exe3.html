@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h2>Sensação Térmica: Como o Corpo Humano Percebe a Temperatura</h2>
+
+    Informe a temperatura atual: <input type="text" id="ipt_temperatura">
+    <br><br>
+    <button onclick="situacaoTemperatura()">Situação da temperatura</button>
+    <br><br>
+    <div id="msgTemperatura"></div>
+    
+</body>
+<script>
+    function situacaoTemperatura() {
+        let temperatura = Number(ipt_temperatura.value);
+        msgTemperatura.innerHTML = 'Para o ser humano a temperatura é... '
+
+        if (temperatura < 14) {
+            msgTemperatura.innerHTML += 'Congelante';
+        } else if (temperatura >= 14 && temperatura < 22) {
+            msgTemperatura.innerHTML += 'Com frio';
+        } else if (temperatura >= 21 && temperatura < 25) {
+            msgTemperatura.innerHTML += 'Confortável';
+        } else if (temperatura >= 25 && temperatura < 32) {
+                msgTemperatura.innerHTML += 'Com calor';
+        } else {
+            msgTemperatura.innerHTML += 'Calor escaldante';
+        }
+    }
+
+</script>
+</html>

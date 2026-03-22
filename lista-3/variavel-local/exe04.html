@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    <h2>Dividindo a Pizza</h2>
+
+    Qual é o valor total da pizza? <input type="number" id="ipt_valor_pizza">
+    <br><br>
+    Estão em quantos amigos? <input type="number" id="ipt_amigos">
+    <br><br>
+    <button onclick="amamosPizza()">#lovePizza</button>
+    <br><br>
+    <div id="div_valor"></div>
+    
+</body>
+</html>
+<script>
+    function amamosPizza() {
+        let valorPizza = Number(ipt_valor_pizza.value);
+        let qtdAmigos = Number(ipt_amigos.value);
+        let valorAPagar = valorPizza / qtdAmigos;
+
+        div_valor.innerHTML = 'Cada um dos ' + qtdAmigos + ' amigos vai pagar R$' + valorAPagar.toFixed(2);
+    }
+</script>

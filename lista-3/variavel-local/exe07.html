@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execicio 07</title>
+</head>
+<body>
+    <h2>Cálculo da média da SPTech</h2>
+
+    Insira a nota que você tirou na avaliação continuada: <input type="number" id="ipt_continuada">
+    <br><br>
+    Insira a nota que você tirou na avaliação semestral: <input type="number" id="ipt_semestral">
+    <br><br>
+    Insira o seu nome: <input type="text" id="ipt_nome">
+    <br><br>
+    <button onclick="mostrarResultado()">Como estou indo?</button>
+    <br><br>
+    <div id="media_aluno"></div>
+    
+</body>
+</html>
+<script>
+    function mostrarResultado() {
+        let nomeAluno = ipt_nome.value;
+        let notaContinuada = Number(ipt_continuada.value);
+        let notaSemestral = Number(ipt_semestral.value);
+        notaContinuada = notaContinuada * 0.40;
+        notaSemestral = notaSemestral * 0.60;
+        soma = notaContinuada + notaSemestral;
+        media = soma / 2;
+
+        media_aluno.innerHTML = 'A média de ' + nomeAluno + ' será de ' + media.toFixed(2);
+        ;
+    }
+</script>

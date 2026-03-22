@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    <h2>Calculadora de Peso e Altura</h2>
+    Insira o seu peso: <input type="number" id="ipt_peso">
+    Insira a sua altura: <input type="number" id="ipt_altura">
+    <br><br>
+    <button onclick="mostValores()">Fale comigo</button>
+</body>
+</html>
+<script>
+    function mostValores() {
+        alert('Você pesa ' + ipt_peso.value + 'KG e tem ' + ipt_altura.value + 'M de altura.')
+    }
+</script>

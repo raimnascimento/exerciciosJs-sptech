@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    <h2>O Ki dos Sayajins!</h2>
+
+    Informe o Ki Base: <input type="text" id="ipt_kibase">
+    <br>
+    Transformar em... <span></span>
+    <br><br>
+    <button onclick="kiBaseSSJ()">SSJ</button><button onclick="kiBaseSSJ2()">SSJ2</button><button onclick="kiBaseSSJ3()">SSJ3</button>
+    <br><br>
+    <div id="msgKiBase"></div>
+    
+</body>
+</html>
+<script>
+    function kiBaseSSJ() {
+        let kibase = Number(ipt_kibase.value);
+        let novoKiBase = kibase * 50;
+
+        msgKiBase.innerHTML = `Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${novoKiBase}`;
+    }
+
+    function kiBaseSSJ2() {
+        let kibase = Number(ipt_kibase.value);
+        let novoKiBase = kibase * 100;
+
+        msgKiBase.innerHTML = `Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${novoKiBase}`;
+    }
+
+    function kiBaseSSJ3() {
+        let kibase = Number(ipt_kibase.value);
+        let novoKiBase = kibase * 200;
+
+        msgKiBase.innerHTML = `Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${novoKiBase}`;
+    }
+</script>

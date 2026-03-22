@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+
+    <h2>Aposentadoria: Quanto Falta?</h2>
+    Informe a sua idade: <input type="number" id="ipt_idade">
+    <br><br>
+    <button onclick="aposentadoriaHomem()">Aposentadoria Homem</button>
+    <br>
+    <div id="resultado_homem"></div>
+    <br><br>
+    <button onclick="aposentadoriaMulher()">Aposentadoria Mulher</button>
+    <br>
+    <div id="resultado_mulher"></div>
+    <br><br>
+
+</body>
+</html>
+<script>
+    function aposentadoriaHomem() {
+        let idade = Number(ipt_idade.value);
+        calculoQuantoFalta = 70 - idade;
+
+        resultado_homem.innerHTML = 'Considerando que homens se aposentam com 70 anos e você tem ' + idade + ' anos, faltam ' + calculoQuantoFalta + ' anos para você se aposentar!';
+    }
+
+    function aposentadoriaMulher() {
+        let idade = Number(ipt_idade.value);
+        calculoQuantoFalta = 60 - idade;
+
+        resultado_mulher.innerHTML = 'Considerando que mulheres se aposentam com 60 anos e você tem ' + idade + ' anos, faltam ' + calculoQuantoFalta + ' anos para você se aposentar!';
+    }
+</script>

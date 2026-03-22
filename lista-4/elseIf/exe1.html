@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <h2>Altura e Esportes: Descubra Sua Vantagem Competitiva</h2>
+
+    Informe sua altura: <input type="text" id="ipt_altura">
+    <br><br>
+    <button onclick="alturaUsuario()">Analisar Estatura</button>
+    <br><br>
+    <div id="msgAltura"></div>
+    
+</body>
+<script>
+    function alturaUsuario() {
+        let altura = Number(ipt_altura.value);
+
+        if (altura <= 1.65) {
+            msgAltura.innerHTML = `Você pode ser piloto de corrida`;
+        } else if (altura < 1.81){
+            msgAltura.innerHTML = `Você pode ser jogador de futebol`;
+        } else {
+            msgAltura.innerHTML = `Você pode ser jogador de vôlei ou basquete`;
+        }
+    }
+</script>
+</html>
