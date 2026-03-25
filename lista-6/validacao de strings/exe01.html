@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <h2>Contador de Caracteres</h2>
+
+    Informe uma frase: <input type="text" id="ipt_frase">
+    <br><br>
+    <button onclick="contadorCaracteres()">Analisar Frase</button>
+    <br><br>
+    <div id="msgTamanhoFrase"></div>
+    
+</body>
+</html>
+<script>
+    function contadorCaracteres() {
+        let tamanhoFrase = (ipt_frase.value).length;
+
+        msgTamanhoFrase.innerHTML = `Tamanho da Frase: ${tamanhoFrase}`;
+
+        if (tamanhoFrase < 10) {
+            msgTamanhoFrase.innerHTML += `<p style="color:red">Frase Curta!</p>`; 
+        } else {
+            msgTamanhoFrase.innerHTML += `<p style="color:blue">Frase longa!</p>`; 
+        }
+    }
+</script>
+
+
