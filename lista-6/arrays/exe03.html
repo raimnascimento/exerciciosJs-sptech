@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h2>Relembrando Moradias: Onde Você Já Viveu?</h2>
+
+    Bairros em que já vivi: <input type="text" id="ipt_nomeBairro"> <button onclick="cadastroDeBairro()">Cadastrar bairro</button>
+    <br><br>
+    Número do bairro: <input type="text" id="ipt_numeroBairro"> <button onclick="numeroBairro()">Relembrar moradia</button>
+    <br><br>
+    <div id="msgUsuario"></div>
+    
+</body>
+</html>
+<script>
+    let vetorBairros = [];
+
+    function cadastroDeBairro() {
+        let nomeBairro = ipt_nomeBairro.value;
+
+        if (nomeBairro.length < 3) {
+            alert('Informe um')
+        }
+        vetorBairros.push(nomeBairro);
+    }
+
+    function numeroBairro() {
+        let numero = Number(ipt_numeroBairro.value);
+
+        if (numero > (vetorBairros.length)) {
+            msgUsuario.innerHTML = `Você ainda não morou num ${numero}º bairro!`;
+        } else {
+            msgUsuario.innerHTML = `O ${numero}º bairro morado é: ${vetorBairros[numero - 1]}`;
+        }
+    }
+</script>

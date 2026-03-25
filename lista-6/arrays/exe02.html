@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h2>Diário de Viagens: Do Primeiro ao Último Destino</h2>
+
+    Destino de viagem: <input type="text"  id="ipt_destino"> <button onclick="diarioViagens()">Adicionar</button>
+    <br><br>
+    <button onclick="primeiraViagem()">Primeira viagem</button>
+    <br><br>
+    <button onclick="terceiraViagem()">Segunda viagem</button>
+    <br><br>
+    <button onclick="ultimaViagem()">Terceira viagem</button>
+    <br><br>
+    <div id="msgSobreOsDestinos"></div>
+
+</body>
+</html>
+<script>
+    let vetorViagens = ['Ouro Preto', 'Rio de Janeiro', 'João Pessoa'];
+
+    function diarioViagens() {
+        let destino = ipt_destino.value;
+        vetorViagens.push(destino);
+        ipt_destino.value = '';
+    }
+
+    function primeiraViagem() {
+        if (vetorViagens.length < 0) {
+            msgSobreOsDestinos.innerHTML = `Ainda não viajou`;
+        } else {
+            msgSobreOsDestinos.innerHTML = `Primeira viagem: ${vetorViagens[0]}`;
+        }
+    }
+
+    function terceiraViagem() {
+        if (vetorViagens.length < 0) {
+            msgSobreOsDestinos.innerHTML = `Ainda não fez a terceira viagem`;
+        } else {
+            msgSobreOsDestinos.innerHTML = `Terceira viagem: ${vetorViagens[2]}`;
+        }
+    }
+
+    function ultimaViagem() {
+        if (vetorViagens.length < 0) {
+            msgSobreOsDestinos.innerHTML = `Ainda não viajou`;
+        } else {
+            msgSobreOsDestinos.innerHTML = `Última viagem: ${vetorViagens[vetorViagens.length - 1]}`;
+        }
+    }
+</script>

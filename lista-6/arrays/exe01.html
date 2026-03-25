@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <h2>Caça às Frutas: Descubra se está na Lista</h2>
+
+    Fruta: <input type="text" id="ipt_fruta">
+    <br><br>
+    <button onclick="listaFrutas()">Pesquisar</button>
+    <br><br>
+    <div id="msgListaFrutas"></div>
+    
+</body>
+</html>
+<script>
+    let vetorFruta = ['Maçã', 'Goiaba', 'Banana', 'Amora', 'Uva'];
+
+    function listaFrutas() {
+        // console.log('teste'.toUpperCase());
+
+        let fruta = (ipt_fruta.value);
+        let frutaUpperCase = fruta.toUpperCase();
+        ipt_fruta.value = '';
+
+        if (vetorFruta.includes(fruta)) {
+            msgListaFrutas.innerHTML = `A fruta ${fruta} existe na lista.`;
+        } else {
+            msgListaFrutas.innerHTML = `Não existe a fruta ${fruta} na lista.`;
+            vetorFruta.push(fruta);
+        }
+    }
+</script>
