@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <h2>Representação do humor do usuário</h2>
+
+    Como você está se sentindo hoje: <br> <b>Opções: "Feliz", "Triste", "Bravo", "Surpreso", "Cansado"</b> <input type="text" id="ipt_humor">
+    <br><br>
+    <button onclick="humor()">Mostrar Humor</button>
+    <br><br>
+    <div id="msgHumor"></div>
+    
+</body>
+</html>
+<script>
+    function humor() {
+        let humor = ipt_humor.value;
+        erro = false;
+
+        if (humor != 'Feliz' && humor != 'Triste' && humor != 'Bravo' && humor != 'Surpreso' && humor != 'Cansado') {
+            alert('Informe um humor válido!');
+            erro = true;
+        }
+
+        if (erro == false) {
+            if (humor === 'Feliz') {
+                msgHumor.innerHTML = `<img style="width: 15%" src="imagens/feliz.webp" alt="">`;
+            } else if (humor == 'Triste') {
+                msgHumor.innerHTML = `<img style="width: 15%" src="imagens/emoji-triste.png" alt="">`;
+            } else if (humor == 'Bravo') {
+                msgHumor.innerHTML = `<img style="width: 15%" src="imagens/bravo-emoji.webp" alt="">`;
+            } else if (humor == 'Surpreso') {
+                msgHumor.innerHTML = `<img style="width: 15%" src="imagens/emoji - surpreso.webp" alt="">`;
+            } else {
+                msgHumor.innerHTML = `<img style="width: 15%" src="imagens/emoji-cansado.jpg" alt="">`;
+            }
+        }
+    }
+</script>

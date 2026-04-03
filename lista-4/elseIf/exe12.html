@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    <h2>Resto da Divisão por 5</h2>
+
+    Informe um número: <input type="number" id="ipt_numero">
+    <br><br>
+    <button onclick="multiplos5()">Múltiplo de 5</button>
+    <br><br><div id="divMultiplos"></div>
+    
+</body>
+</html>
+<script>
+    function multiplos5() {
+        let numeroInput = ipt_numero.value;
+        let numero = Number(numeroInput);
+        let erro = false;
+
+        if (numeroInput === '') {
+            alert('Informe um número!');
+            erro = true;
+        }
+
+        if (erro === false) {
+            if (numero % 5 == 0) {
+                divMultiplos.innerHTML = `Perfeito, esse número é múltiplo de cinco`;
+            } else if (numero % 5 == 1) {
+                divMultiplos.innerHTML = `Vish, sobrou um`;
+            } else if (numero % 5 == 2) {
+                divMultiplos.innerHTML = `Para esse o resto é dois`;
+            } else if (numero % 5 == 3) {
+                divMultiplos.innerHTML = `Com mais dois daria certo`;  
+            } else if (numero % 5 == 4) {
+                divMultiplos.innerHTML = `Só faltou 1 para ser múltiplo de 5`;
+            }
+        }
+    }
+</script>

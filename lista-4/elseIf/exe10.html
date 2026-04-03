@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    <h2>Limite de Velocidade</h2>
+    Em que velocidade você estava dirigindo? <input type="number" id="ipt_velocidade">
+    <br><br>
+    Qual é o limite de velocidade da via? (Km/h) <input type="number" id="ipt_limiteVelocidade">
+    <br><br>
+    <button onclick="analiseVelocidade()">Verificar</button>
+    <br><br>
+    <div id="msgVelocidade"></div>
+    
+</body>
+</html>
+<script>
+    function analiseVelocidade() {
+        let velocInput = ipt_velocidade.value;
+        let velocLimiteInput = ipt_limiteVelocidade.value;
+        let velocidade = Number(velocInput);
+        let limite = Number(velocLimiteInput);
+        let erros = '';
+
+        if (velocInput === '') {
+            erros += `Informe a velocidade / `;
+        }
+        if (velocLimiteInput === '') {
+            erros += `Informe o limite de velocidade da via / `;
+        }
+
+        if (erros === '') {
+            if (velocidade <= limite) {
+                msgVelocidade.innerHTML = `Velocidade dentro do limite. Boa direção!`;
+            } else if (velocidade > limite && velocidade <= (limite + (limite * 20/100))) {
+                msgVelocidade.innerHTML = `Atenção! Excedendo o limite permitido.`;
+            } else if (velocidade > (limite + (limite * 20/100))) {
+                msgVelocidade.innerHTML = `Multa grave! Velocidade muito acima do permitido.`;
+            }
+        } else {
+            alert(erros);
+        }        
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <h2>Meta de Economia: Você Está no Caminho Certo?</h2>
+
+    Qual a sua meta de economia? <input type="text" id="ipt_metaEconomia">
+    <br><br>
+    Quanto você tem guardado? <input type="text" id="ipt_quantiaGuardada">
+    <br><br>
+    <button onclick="mostrarEconomia()">Analisar economia</button>
+    <br><br>
+    <div id="msgMetaEconomia"></div>
+    
+</body>
+</html>
+<script>
+    function mostrarEconomia() {
+        let metaInput = ipt_metaEconomia.value;
+        let qtdInput = ipt_quantiaGuardada.value;
+        let meta = Number(metaInput);
+        let qtdGuardada = Number(qtdInput);
+        let diferenca = meta - qtdGuardada;
+        let erro = false;
+
+        if (metaInput === '') {
+            alert('Informe uma meta a ser guardada');
+            erro = true;
+        }
+        if (qtdInput === '') {
+            alert('Informe a quantidade guardada');
+            erro = true;
+        }
+
+        if (erro === false) {
+            if (meta == qtdGuardada) {
+                msgMetaEconomia.innerHTML = `Parabéns, meta alcançada!`;
+            } else if (meta < qtdGuardada) {
+                msgMetaEconomia.innerHTML += `Parabéns, meta alcançada!<br>Meta ultrapassada em R$ ${(qtdGuardada - meta).toFixed(2)}`;
+            } else {
+                msgMetaEconomia.innerHTML = `Força! Ainda em busca da meta! Falta R$ ${diferenca.toFixed(2)}`;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    <h2>Imagem do Pokémon selecionado</h2>
+
+    Escolha um pokémon (Bulbasaur, Charmander ou Squirtle): <input type="text" id="ipt_pokemon">
+    <br><br>
+    <button onclick="pokemon()">Escolher Pokémon</button>
+    <br><br>
+    <div id="divPokemon"></div>
+</body>
+</html>
+<script>
+    function pokemon() {
+        let pokemon = ipt_pokemon.value;
+        let erro = false;
+
+        if (pokemon != 'Bulbasaur' && pokemon != 'Charmander' && pokemon != 'Squirtle') {
+            alert('Pokémon não reconhecido.');
+            erro = true;
+        }
+
+        if (erro === false) {
+            if (pokemon == 'Bulbasaur') {
+                divPokemon.innerHTML = `<img style="width: 30%" src="imagens/Bulbasaur-Pokemon.png" alt="Bulbasaur">`;
+            } else if (pokemon == 'Charmander') {
+                divPokemon.innerHTML = `<img style="width: 30%" src="imagens/Pokemon-Charmander.png" alt="Charmander">`;
+            } else {
+                divPokemon.innerHTML = `<img style="width: 30%" src="imagens/free_png_pokemon___squirtle.png" alt="Squirtle">`;
+            }
+        }
+    }
+</script>
