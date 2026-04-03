@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19</title>
+</head>
+<body>
+    <h2>Mercado BOM DOCE</h2>
+    Quantidade de chocolates comprados: <input type="number" id="ipt_qtdChocolates">
+    <br><br>
+    <button onclick="compraChoc()">Compra</button>
+    <br><br>
+    <div id="msgChocolates"></div>
+    
+</body>
+</html>
+<script>
+    function compraChoc() {
+        let qtdInput = ipt_qtdChocolates.value;
+        let qtdChocolates = Number(qtdInput);
+        let preco = 0;
+        erro = false;
+
+        if (qtdInput === '') {
+            alert('Informe a quantidade de chocolates!!!');
+            erro = true;
+        }
+
+        if (erro === false) {
+            if (qtdChocolates > 12) {
+                preco = qtdChocolates * 2.50;
+            } else {
+                preco = qtdChocolates * 3.00;
+            }
+
+            msgChocolates.innerHTML = `O valor da sua compra foi de R$${preco.toFixed(2)}`;
+        } 
+    }
+</script>

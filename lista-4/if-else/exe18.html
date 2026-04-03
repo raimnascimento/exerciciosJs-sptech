@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18</title>
+</head>
+<body>
+    <h2>Teste de divisibilidade</h2>
+    Informe um número: <input type="number" id="ipt_nmr1">
+    <br><br>
+    Informe outro número: <input type="number" id="ipt_nmr2">
+    <br><br>
+    <button onclick="testeDiv()">Testar</button>
+    <br><br>
+    <div id="divMsg"></div>
+</body>
+</html>
+<script>
+    function testeDiv() {
+        let nmr1Input = ipt_nmr1.value;
+        let nmr2Input = ipt_nmr2.value;
+        let num1 = Number(nmr1Input);
+        let num2 = Number(nmr2Input);
+        let erro = '';
+
+        if (nmr1Input === '') {
+            erro += `Informe o 1º número! / `;
+        }
+        if (nmr2Input === '') {
+            erro += `Informe o 2º número! / `;
+        }
+
+        if (erro === '') {
+            if (num1 % num2 == 0) {
+                divMsg.innerHTML = 'POSITIVO';
+            } else {
+                divMsg.innerHTML = 'NEGATIVO';
+            }
+        } else {
+            alert(erro);
+        }
+    }
+</script>

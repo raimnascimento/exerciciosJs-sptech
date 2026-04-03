@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 20</title>
+</head>
+<body>
+    <h2>Análise de economia</h2>
+    Meta de economia: <input type="number" id="ipt_meta">
+    <br><br>
+    Quando já juntou: <input type="number" id="ipt_dinheiroGuardado">
+    <br><br>
+    <button onclick="analise()">Analisar economia</button>
+    <br><br>
+    <div id="msgEconomia"></div>
+</body>
+</html>
+<script>
+    function analise() {
+        let metaInput = ipt_meta.value;
+        let juntouInput = ipt_dinheiroGuardado.value;
+        let meta = Number(metaInput);
+        let dinheiroGuardado = Number(juntouInput);
+        let erro = false;
+
+        if (metaInput === '') {
+            alert('Informe sua meta!')
+            erro = true;
+        }
+        if (juntouInput === '') {
+            alert('Informe quanto juntou!')
+            erro = true;
+        }
+
+        if (erro === false) {
+            if (dinheiroGuardado >= meta) {
+                ipt_meta.value = '';
+                ipt_dinheiroGuardado.value = '';
+
+                msgEconomia.innerHTML = `Parabéns, meta alcançada! <br>`;
+
+                if (dinheiroGuardado > meta) {
+                msgEconomia.innerHTML += `Meta ultrapassada em R$ ${(dinheiroGuardado - meta).toFixed(2)}`;
+            }
+            } else {
+                msgEconomia.innerHTML = `Força! Ainda em busca da meta! Falta R$ ${(meta - dinheiroGuardado).toFixed(2)}`;
+            }    
+        }
+    }
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    <h2>Análise CNH</h2>
+
+    Nome: <input type="text" id="ipt_nome">
+    <br><br>
+    Idade: <input type="number" id="ipt_idade">
+    <br><br>
+    <button onclick="avaliacaoCnh()">Avaliar aluno</button>
+    <br><br>
+    <div id="analiseAluno"></div>
+    
+</body>
+</html>
+<script>
+    function avaliacaoCnh() {
+        let nome = ipt_nome.value.trim();
+        let idade = Number(ipt_idade.value);
+        let erros = '';
+
+        if (nome.length < 3) {
+            erros += `Informe o seu nome para prosseguir / `;
+        }
+
+        if (idade == '') {
+            erros += `Informe sua idade / `;
+        }
+
+        if (erros == '') {
+            ipt_nome.value = '';
+            ipt_idade.value = '';
+            
+            if (idade >= 18) {
+                analiseAluno.innerHTML = `${nome}, vamos tirar a CNH?`;
+            } else {
+                analiseAluno.innerHTML = `${nome}, vai jogar PlayStation!`;
+            }
+        } else {
+            alert(erros);
+        }
+    }
+</script>

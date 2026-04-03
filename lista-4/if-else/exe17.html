@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+</head>
+<body>
+    <h2>Par ou Impar</h2>
+    Informe um número: <input type="number" id="ipt_numero">
+    <br><br>
+    <button onclick="parImpar()">Analisar</button>
+    <br><br>
+    <div id="divMsg"></div>
+    
+</body>
+</html>
+<script>
+    function parImpar() {
+        let nmrInput = ipt_numero.value;
+        let numero = Number(nmrInput);
+        erro = false;
+
+        if (nmrInput === '') {
+            alert('Informe um número!');
+            erro = true;
+        }
+
+        if (erro === false) {
+            if (numero % 2 == 0) {
+                divMsg.innerHTML = `<p style="color: red; background-color: yellow; width: 30%">Esse número é PAR</p>`;
+            } else {
+                divMsg.innerHTML = `<p style="color: blue"><b>Esse número é ÍMPAR</b></p>`;
+            }
+        } 
+    }
+</script>
