@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h3>Simulador de Preço do Bilhete Único de São Paulo</h3>
+
+    Tipo de passageiro: 
+    <select name="" id="ipt_tipoPassageiro">
+        <option value="1">Comum</option>
+        <option value="2">Estudante</option>
+        <option value="3">Idoso/PNE</option>
+    </select>
+    <br><br>
+    Tipo de passagem:
+    <select name="" id="ipt_tipoPassagem">
+        <option value="1">Passagem única</option>
+        <option value="2">Passagem integração</option>
+    </select>
+    <br><br>
+    <button onclick="bilheteUnico()">Simular preço</button>
+    <br><br>
+    <div id="msgBilheteUnico"></div>
+    
+</body>
+</html>
+<script>
+    function bilheteUnico() {
+        let tipoPassageiro = ipt_tipoPassageiro.value;
+        let tipoPassagem = ipt_tipoPassagem.value;
+        let precoPassagem = 0;
+        let precoPassagemUnica = 4.40;
+        let precoPassagemInt = 5.90;
+
+        if (tipoPassageiro == 3 && (tipoPassagem == 1 || tipoPassagem == 2)) {
+            precoPassagem = 0;
+        } else if (tipoPassageiro == 2 && (tipoPassagem == 1 || tipoPassagem == 2)) {
+            if (tipoPassagem == 1) {
+                precoPassagem = precoPassagemUnica - (precoPassagemUnica * 50/100);
+            }
+            if (tipoPassagem == 2) {
+                precoPassagem = precoPassagemInt - (precoPassagemInt * 50/100);
+            }
+        } else if (tipoPassageiro == 1) {
+            if (tipoPassagem == 1) {
+                precoPassagem = precoPassagemUnica;
+            } else {
+                precoPassagem = precoPassagemInt;
+            }
+        }
+
+        msgBilheteUnico.innerHTML = `Valor da passagem escolhida: ${precoPassagem.toFixed(2)}`;
+    }
+</script>
