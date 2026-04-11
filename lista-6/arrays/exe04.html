@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h2>Top Filmes Favoritos: Do Mais Amado ao Menos</h2>
+
+    Filmes favoritos: <input oninput="totalFilmes()" type="text" id="ipt_filme">
+    <br><br>
+    <button onclick="cadastro()">Cadastrar filme</button>  <button onclick="filmesfavoritos()">Ver favoritos</button>
+    <br><br>
+    <div id="divTotalFilmes"></div>
+    <div id="msgFilmesFavoritos"></div>
+
+</body>
+</html>
+<script>
+    let filmes = [];
+
+    function totalFilmes() {
+        divTotalFilmes.innerHTML = `Total: ${filmes.length}`;
+    }
+
+    function cadastro() {
+        let filme = ipt_filme.value.trim();
+        filmes.push(filme);
+        ipt_filme.value = '';
+    }
+
+    function filmesfavoritos() {
+        msgFilmesFavoritos.innerHTML = `O filme que mais gosta é <b>${filmes[0]}</b>.
+        <br>
+        E desses, o que menos gosta é <b>${filmes[filmes.length - 1]}</b>`;
+    }
+
+</script>
